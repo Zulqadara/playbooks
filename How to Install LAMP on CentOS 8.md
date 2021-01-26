@@ -1,6 +1,7 @@
 ﻿# **How to Install LAMP on CentOS 8/7 / RHEL 8**
 
 - yum install epel-release -y
+  - if 'no match for argument: epel-release', sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 - yum install -y httpd httpd-tools mariadb-server mariadb php php-fpm php-json php-opcache php-gd php-curl php-mysqlnd php-mbstring
 - systemctl start httpd
 - systemctl start mariadb 
