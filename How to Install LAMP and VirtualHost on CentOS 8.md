@@ -42,20 +42,19 @@ Testing
 - vim /etc/httpd/conf/httpd.conf 
 - cd /etc/httpd/conf.d/
 - vim website1.conf >>
+	<Directory /srv/wesbsites/website1>
+		Require all granted
+		AllowOverride None
+	</Directory>
 
-  <Directory /srv/wesbsites/website1>
-	Require all granted
-	AllowOverride None
-</Directory>
-
-<VirtualHost *:80>
-	DocumentRoot /srv/websites/website1
-	ServerName website1.com
-	ServerAlias web1.com
-	ServerAdmin root@admin.com
-	ErrorLog "logs/website1_error_log"
-	CustomLog "logs/website1_access_log" combined
-</VirtualHost>
+	<VirtualHost *:80>
+		DocumentRoot /srv/websites/website1
+		ServerName website1.com
+		ServerAlias web1.com
+		ServerAdmin root@admin.com
+		ErrorLog "logs/website1_error_log"
+		CustomLog "logs/website1_access_log" combined
+	</VirtualHost>
   
 - ls -Z , to manage the SELinux Context
 - semanage fcontext -a -t httpd_sys_content_t "/srv/websites(/.*)?"  , to manage SELinux
@@ -78,6 +77,7 @@ Webiste 2
 - systemctl restart httpd
 - vim /etc/hosts
   - Add wesbite2.com next to website1.com
+ - systemctl restart httpd
 
 
  
