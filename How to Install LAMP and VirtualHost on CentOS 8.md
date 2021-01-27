@@ -13,6 +13,20 @@
 - systemctl status mariadb
 - systemctl status php-fpm 
 
+SSL Installation
+- openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/httpd.key -x509 -days 365 -out /etc/pki/tls/certs/httpd.crt
+- ls -l /etc/pki/tls/private/httpd.key /etc/pki/tls/certs/httpd.crt
+- To include your newly created SSL certificate into the Apache web-server configuration open the /etc/httpd/conf.d/ssl.conf file with administrative privileges and change the following lines:
+```
+	FROM:
+	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+	TO:
+	SSLCertificateFile /etc/pki/tls/certs/httpd.crt
+	SSLCertificateKeyFile /etc/pki/tls/private/httpd.key
+```
+- systemctl reload httpd
+
 Secure MariaDB
 
 - mysql_secure_installation 
