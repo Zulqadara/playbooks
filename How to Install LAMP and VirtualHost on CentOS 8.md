@@ -42,6 +42,7 @@ Testing
 - vim /etc/httpd/conf/httpd.conf 
 - cd /etc/httpd/conf.d/
 - vim website1.conf >>
+```
 	<Directory /srv/wesbsites/website1>
 		Require all granted
 		AllowOverride None
@@ -55,6 +56,7 @@ Testing
 		ErrorLog "logs/website1_error_log"
 		CustomLog "logs/website1_access_log" combined
 	</VirtualHost>
+```
   
 - ls -Z , to manage the SELinux Context
 - semanage fcontext -a -t httpd_sys_content_t "/srv/websites(/.*)?"  , to manage SELinux
