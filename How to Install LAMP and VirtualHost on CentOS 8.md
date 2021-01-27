@@ -43,7 +43,7 @@ Testing
 - cd /etc/httpd/conf.d/
 - vim website1.conf >>
 ```
-	<Directory /srv/wesbsites/website1>
+	<Directory /srv/websites/website1>
 		Require all granted
 		AllowOverride None
 	</Directory>
