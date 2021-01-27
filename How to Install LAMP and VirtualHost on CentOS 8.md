@@ -80,6 +80,7 @@ Webiste 2
 - vim /etc/hosts
   - Add wesbite2.com next to website1.com
  - systemctl restart httpd
+- http://website2.com
 
 
  
