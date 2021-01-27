@@ -15,7 +15,7 @@
 
 Secure MariaDB
 
-- mysql\_secure\_installation 
+- mysql_secure_installation 
 
 Rules to allow ports (80 & 443) via Firewall
 
