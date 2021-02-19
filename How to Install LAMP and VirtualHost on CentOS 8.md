@@ -51,6 +51,11 @@ Testing
   - <?php phpinfo(); ?>
 - Systemctl restart httpd
 
+-- If LDAP can't connect: 
+	- getsebool -a | grep httpd
+	- setsebool -P httpd_can_connect_ldap 1
+
+
 # **Configuring Apache virtual hosts in Red Hat 8 / CentOS 8**
 
 - vim /etc/httpd/conf/httpd.conf 
