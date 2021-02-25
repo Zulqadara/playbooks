@@ -54,6 +54,7 @@ Testing
 *If LDAP can't connect:* 
 - getsebool -a | grep httpd
 - setsebool -P httpd_can_connect_ldap 1
+	- If error: dnf reinstall "selinux-policy*"
 
 
 # **Configuring Apache virtual hosts in Red Hat 8 / CentOS 8**
